@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+
+
+ <script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.c = "AIRA";
+});
+</script> 
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+  <ul class="nav navbar-nav navbar-left">
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+     
+    </ul>
+ 
+  <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="sidenav">
+<a href="#">Dashboards</a>
+  <a href="#">Use APIs</a>
+  <a href="#">Support</a>
+  
+</div>
+<center>
+<div ng-app="myApp" ng-controller="myCtrl">
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-body">
+	  <div class="mo">
+	  <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Organizations
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+   
+    <li onclick="document.getElementById.innerHTML='AIRA'">Aira</li>
+	 <li class="divider"></li>
+    <li>Beta</li>
+	 <li class="divider"></li>
+    <li>Chaic</li>
+  </ul>
+</div></div>
+	  </div>
+	  </div>
+</div>
+</center>
+<p id="d"></p>
+<div class="container wrapper" ng-app="myApp" ng-controller="DbController">
+<div class="navbar-header">
+<div class="alert alert-default navbar-brand search-box">
+<button class="btn btn-primary" ng-show="show_form" ng-click="formToggle()">Add More <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+</div>
+<div class="col-md-6 col-md-offset-3">
+<div class="table-responsive">
+<table class="table table-hover">
+<tr>
+<th>Id</th>
+<th>Organization Name</th>
+<th>Config name</th>
+<th>Config Value</th>
+<th></th>
+</tr>
+<tr ng-repeat="detail in details| filter:search_query">
+<td>
+<span>{{detail.org_id}}</span></td>
+<td>{{detail.org_name}}</td>
+<td>{{detail.config_name}}</td>
+<td>{{config_value}}</td>
+
+<td>
+<button class="btn btn-warning" ng-click="editInfo(detail)" title="Edit"><span class="glyphicon glyphicon-edit"></span></button>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>
