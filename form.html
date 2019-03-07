@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<form class="form-horizontal alert alert-warning" name="eorgList" id="orgForm" ng-submit="insertInfo(orgInfo);" hidden>
+<h3 class="text-center">Insert Details </h3>
+<div class="form-group">
+<label for="org_name">Organization Name:</label>
+<input type="text" name="org_name" class="form-control" placeholder="Enter Organization Name" ng-model="orgInfo.name" autofocus required />
+</div>
+<div class="form-group">
+<p class="text-danger" ng-show="orgList.org_name.$invalid && orgList.org_name.$dirty">Name field is Empty!</p>
+</div>
+<div class="form-group">
+<label for="Config_name">Config Name:</label>
+<input type="text" name="config_name" class="form-control" placeholder="Enter config name " ng-model="orgInfo.config_name" autofocus required />
+</div>
+<div class="form-group">
+<p class="text-danger" ng-show="orgList.config_name.$invalid && orgList.config_name.$dirty">Field is empty!</p>
+</div>
+<div class="form-group">
+<label for="config_value">Config Value</label>
+<input type="text" name="config_value" class="form-control" placeholder="Enter config value " ng-model="orgInfo.config_name" autofocus required />
+</div>
+<div class="form-group">
+<p class="text-danger" ng-show="orgList.config_value.$invalid && orgList.config_value.$dirty">Field is empty!</p>
+</div>
+
+
+<div class="form-group">
+<button class="btn btn-warning" ng-disabled="orgList.$invalid">Add </button>
+</div>
