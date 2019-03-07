@@ -25,3 +25,11 @@ $scope.currentUser = info;
 $('#orgForm').slideUp();
 $('#editForm').slideToggle();
 }
+$scope.UpdateInfo = function(info){
+$http.post('databaseFiles/updateDetails.php',{"id":info.org_id,"name":info.org_name,"cname":info.config_name,"value":info.config_value,}).success(function(data){
+$scope.show_form = true;
+if (data == true) {
+getInfo();
+}
+});
+}
