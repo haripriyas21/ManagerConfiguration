@@ -19,3 +19,9 @@ $('#empForm').css('display', 'none');
 }
 });
 }
+  $scope.currentUser = {};
+$scope.editInfo = function(info){
+$scope.currentUser = info;
+$('#orgForm').slideUp();
+$('#editForm').slideToggle();
+}
